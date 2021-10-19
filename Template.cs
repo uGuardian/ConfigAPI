@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 // REQUIRED: Rename the namespace to your own
 namespace Template {
