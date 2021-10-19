@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public static partial class ConfigAPI {
 	// Token: 0x02002064 RID: 8292

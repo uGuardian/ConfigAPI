@@ -1,25 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
-using System.Text;
-using System.Xml;
-using System.Xml.Serialization;
-using Battle.DiceAttackEffect;
 using GameSave;
-using HarmonyLib;
-using LOR_DiceSystem;
-using LOR_XML;
-using Spine;
-using Spine.Unity;
-using StoryScene;
-using TMPro;
-using UI;
 using UnityEngine;
-using UnityEngine.UI;
-using WorkParser;
-using Workshop;
 using Mod;
 
 public static partial class ConfigAPI {
