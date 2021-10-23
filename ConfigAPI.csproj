@@ -13,6 +13,9 @@
     <Reference Include="mscorlib">
       <HintPath>..\libs\Managed\mscorlib.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio">
+      <HintPath>..\libs\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\libs\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
@@ -129,5 +132,8 @@
     <Content Include="ConfigMenu\ModInfo.cs" />
     <Content Include="ConfigMenu\ModSlot.cs" />
     <Content Include="ConfigMenu\ModDesc.cs" />
+    <Content Include="CustomMapUtility\Assemblies\CustomMapUtility.cs" />
+    <Content Include="CustomMapUtility\Assemblies\Wav.cs" />
+    <Compile Remove="CustomMapUtility\Assemblies\Template.cs" />
   </ItemGroup>
 </Project>
