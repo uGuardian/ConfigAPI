@@ -13,9 +13,26 @@ public static partial class ConfigAPI {
         public override void OnInitializeMod() {
 			Harmony harmony = new Harmony("LoR.uGuardian.ConfigAPI");
 			harmony.PatchAll();
-			RemoveError();
+			this.RemoveError();
 		}
-	}
+		//Borrowed duplicate assembly error removal
+        public void RemoveError() {
+            var list = new List<string>();
+            var list2 = new List<string>();
+            list.Add("0Harmony");
+            using (var enumerator = Singleton<ModContentManager>.Instance.GetErrorLogs().GetEnumerator()) {
+                while (enumerator.MoveNext()) {
+                    var errorLog = enumerator.Current;
+                    if (list.Exists(x => errorLog.Contains(x))) {
+                        list2.Add(errorLog);
+                    }
+                }
+            }
+            foreach (var item in list2) {
+                Singleton<ModContentManager>.Instance.GetErrorLogs().Remove(item);
+            }
+        }
+    }
 	private readonly static string resources = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+"\\..\\Resource";
 
 	[HarmonyPatch(typeof(UIOptionWindow), "Open")]
@@ -54,28 +71,4 @@ public static partial class ConfigAPI {
 			}
 		}
 	}
-
-	//Borrowed duplicate assembly error removal
-	public static void RemoveError()
-    {
-        var list = new List<string>();
-        var list2 = new List<string>();
-        list.Add("0Harmony");
-        using (var enumerator = Singleton<ModContentManager>.Instance.GetErrorLogs().GetEnumerator())
-        {
-            while (enumerator.MoveNext())
-            {
-                var errorLog = enumerator.Current;
-                if (list.Exists(x => errorLog.Contains(x)))
-                {
-                    list2.Add(errorLog);
-                }
-            }
-        }
-
-        foreach (var item in list2)
-        {
-            Singleton<ModContentManager>.Instance.GetErrorLogs().Remove(item);
-        }
-    }
 }

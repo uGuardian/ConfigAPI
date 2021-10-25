@@ -135,5 +135,6 @@
     <Content Include="CustomMapUtility\Assemblies\CustomMapUtility.cs" />
     <Content Include="CustomMapUtility\Assemblies\Wav.cs" />
     <Compile Remove="CustomMapUtility\Assemblies\Template.cs" />
+    <Compile Remove="CustomMapUtility\Assemblies\Wav_Old.cs" />
   </ItemGroup>
 </Project>
